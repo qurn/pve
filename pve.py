@@ -21,6 +21,8 @@ def pve():
                     row = [key] + [var_type] + value
                 elif var_type == 'range':
                     row = [key] + [var_type] + [v for v in value]
+                elif var_type == 'numpy.ndarray':
+                    row = [key] + [var_type] + list(value)
                 else:
                     row = [key] + [var_type] + [value]
                 w.writerow(row)
